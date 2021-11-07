@@ -1,15 +1,24 @@
-
-
-let nombre = prompt("¿Como te llamas?");
-alert("Hola " + nombre);
 let RESULTADO = 0;
 let cuantosNumeros;
 let numeros = [];
 let aux;
+let nombre = prompt("Hola! ¿Como te llamas?");
+let apellido = prompt("¿Cual es tu apellido?");
+let edad = Number(prompt("¿Y tu edad?"));
+
+const usuario = new Usuario(nombre, apellido, edad);
+
+
+if (usuario.getedad() >= 18){
+	alert("Bienvenido " + usuario.getnombre() + " " + usuario.getapellido());
+}else{
+	alert("No puedes entrar, eres menor de edad.");
+	
+}
 
 
 do {
-	respuesta = prompt(`
+	respuesta = prompt(usuario.getnombre() +" "+ usuario.getapellido()+`
 	¿Te gustaría sumar o multiplicar?
 	-Sumar
 	-Multiplicar`);
@@ -83,4 +92,25 @@ function recibenumero(cantidad){
 		numeros[i] = Number(prompt("Dame un numero"));
 	}
 	return numeros;
+}
+
+class Usuario{
+	constructor(nombre, apellido, edad){
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.edad = edad;
+	}
+
+	getnombre(){
+		return this.nombre;
+	}
+
+	getapellido(){
+		return this.apellido;
+	}
+
+	getedad(){
+		return this.edad;
+	}
+
 }
