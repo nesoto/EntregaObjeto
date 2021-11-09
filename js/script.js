@@ -13,6 +13,7 @@ if (usuario.getedad() >= 18){
 	alert(`Bienvenido/a ${usuario.getnombre()} ${usuario.getapellido()}`);
 }else{
 	alert("No puedes entrar, eres menor de edad.");
+	exit;
 }
 
 
